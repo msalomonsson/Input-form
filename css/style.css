@@ -1,0 +1,126 @@
+
+.main-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs{
+    min-width: 70%;
+    min-height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: lightcoral; */
+}
+
+.title{
+    padding: 2rem 0;
+    font-size: 2.5rem;
+}
+
+.input-container{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 2rem;
+   margin-bottom: 2rem;
+}
+
+#name-input, #course-input, #author-input {
+    width: 100%;
+    padding: .5rem;
+    border: 3px solid var(--brown-color);
+}
+
+.icon{
+    background: var(--brown-color);
+    color: white;
+    min-width: 50px;
+    text-align: center;
+    padding: .1rem;
+    border-left: 1px solid #ced4da;
+    border-radius: .3rem;
+    
+}
+
+.submit-btn{
+    display: block;
+    width: 100%;
+    padding: .5rem;
+    cursor: pointer;
+    text-align: center;
+    border: 0.2rem solid var(--brown-color);
+    border-radius: .25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cards{
+    max-width: 70%;
+    min-height: 30rem;
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.card{
+    min-width: 260px;
+    max-height: 335px;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.card-top{
+    border-radius: 8px;
+}
+
+.name, .course, .author{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.name::before{
+    content: 'Name:';
+    background-color: #ffc107;
+    color: black;
+    display: inline-block;
+    padding: .25em .4em;
+    border-radius: .25rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+}
+
+.course::before{
+    content: 'Course:';
+    background-color: #28a745;
+    color: black;
+    display: inline-block;
+    padding: .25em .4em;
+    border-radius: .25rem;
+    
+
+    margin-left: 1rem;
+    font-size: 1rem;
+}
+
+.author::before{
+    content: 'Author:';
+    background-color: #dc3545;
+    color: black;
+    display: inline-block;
+    padding: .25em .4em;
+    border-radius: .25rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+}

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+ 
+:root {
+    --brown-color: #a76d60; 
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(circle, rgb(245, 245, 243) 45%, rgb(182, 184, 185) 100%);
+    font-family: 'Roboto';
+}
+
+ul{
+    list-style: none;
+}
