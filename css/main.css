@@ -2,6 +2,8 @@
  
 :root {
     --brown-color: #a76d60; 
+    --yellow-color: #ffc107;
+    --blue-color: #14213D;
 }
 
 *,
@@ -13,7 +15,8 @@
 }
 
 body {
-    background: radial-gradient(circle, rgb(245, 245, 243) 45%, rgb(182, 184, 185) 100%);
+    background: rgb(236,236,237);
+    background: radial-gradient(circle, rgba(236,236,237,1) 0%, rgba(20,33,61,1) 99%);
     font-family: 'Roboto';
 }
 

@@ -12,8 +12,8 @@ const spinner = document.querySelector('.lds-spinner');
 
 
 /* Event Listeners */
-
 form.addEventListener('submit', addCourse);
+btn.addEventListener('click', validate);
 
 
 /* Functions */
@@ -23,14 +23,14 @@ function addCourse(e){
     console.log('working');
 
     if (inputName.value == '' || inputCourse.value == '' || inputAuthor.value == ''){
-
+        
         inputName.classList.toggle('fail');
         inputCourse.classList.toggle('fail');
         inputAuthor.classList.toggle('fail');
         btn.classList.toggle('fail');
 
         error.style.display = 'flex';
-
+        
         setTimeout(function(){
             error.style.display = 'none';
             inputName.classList.remove('fail');
@@ -38,10 +38,13 @@ function addCourse(e){
             inputAuthor.classList.remove('fail');
             btn.classList.remove('fail');
         }, 3000)
-    }   else {
+       
+    }   
+    else {
         
         success.style.display = 'flex';
         spinner.style.display ='inline-block';
+
 
         setTimeout(function(){
             success.style.display = 'none';
@@ -49,15 +52,16 @@ function addCourse(e){
 
             const htmlCode = `
                 <li class="card">
-                    <div class="card-top">
-                        <picture>
-                            <img src="https://source.unsplash.com/random/260x195" alt="Random picture">
-                        </picture>
+                    <div class="front">
+                    <img src="https://source.unsplash.com/260x335/?${inputCourse.value}
+                    " alt="Random picture">
                     </div>
-                    <div class="card-bottom">
-                        <p class="name">${inputName.value}</p>
-                        <p class="course">${inputCourse.value}</p>
-                        <p class="author">${inputAuthor.value}</p>
+                    <div class="back">
+                        <div class="content">
+                            <p class="name">${inputName.value}</p>
+                            <p class="course">${inputCourse.value}</p>
+                            <p class="author">${inputAuthor.value}</p>
+                        </div>
                     </div>
                 </li>
             `;
@@ -70,12 +74,8 @@ function addCourse(e){
 
         }, 3000)
         
-
         inputName.focus();
     }
-
-
-   
-
-
 }
+
+

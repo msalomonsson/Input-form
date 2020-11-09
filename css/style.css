@@ -33,14 +33,14 @@
 #name-input, #course-input, #author-input {
     width: 100%;
     padding: .5rem;
-    border: 3px solid var(--brown-color);
+    border: 3px solid black;
     border-radius: 8px;
     outline: none;
 }
 
 .icon{
-    background: var(--brown-color);
-    color: white;
+    background: var(--yellow-color);
+    color: black;
     min-width: 50px;
     text-align: center;
     padding: .1rem;
@@ -55,7 +55,7 @@
     padding: .5rem;
     cursor: pointer;
     text-align: center;
-    border: 0.2rem solid var(--brown-color);
+    border: 0.2rem solid black;
     border-radius: .25rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -64,7 +64,76 @@
     outline: none;
 }
 
+/* Test card */
+
 .cards{
+    width: 70%;
+    min-height: 30rem;
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+} 
+
+.card{
+    max-width: 260px;
+    max-height: 335px;
+    position: relative;
+    perspective: 800px;
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+
+.front img{
+    border-radius: 10px;
+}
+
+.front, .back{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;;
+    transition: transform .6s linear;
+}
+
+.front{
+    transform: rotateY(0deg);
+}
+
+.back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    transform: rotateY(180deg);
+}
+
+.back .content{
+    height: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content p {
+    
+}
+
+.card:hover .front{
+    transform: rotateY(180deg);
+}
+
+.card:hover .back{
+    transform: rotateY(0deg);
+}
+
+
+
+/* .cards{
     max-width: 70%;
     min-height: 30rem;
 }
@@ -73,62 +142,60 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-}
+} */
 
 
-.card{
+/* .card{
     min-width: 260px;
     max-height: 335px;
     margin-right: 2rem;
     margin-top: 2rem;
     border: 1px solid black;
     border-radius: 8px;
-}
+} */
 
-.card-top{
+/* .card-top{
     border-radius: 8px;
-}
+} */
 
 .name, .course, .author{
     margin-bottom: 1rem;
     display: flex;
-    justify-content: flex-start;
+    align-self: flex-start;
+    font-size: 1.2rem;
+    margin-left: 1rem;
 }
 
 .name::before{
-    content: 'Name:';
-    background-color: #ffc107;
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f007";
+    background-color: var(--yellow-color);
     color: black;
     display: inline-block;
-    padding: .25em .4em;
-    border-radius: .25rem;
-    margin-left: 1rem;
-    font-size: 1rem;
+    margin-right: 1rem;
+    border-radius: 8px;
+    padding: .5rem;
 }
 
 .course::before{
-    content: 'Course:';
-    background-color: #28a745;
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f02d";
+    background-color: var(--yellow-color);
     color: black;
     display: inline-block;
-    padding: .25em .4em;
-    border-radius: .25rem;
-    
-
-    margin-left: 1rem;
-    font-size: 1rem;
+    margin-right: 1rem;
+    border-radius: 8px;
+    padding: .5rem;
 }
 
 .author::before{
-    content: 'Author:';
-    background-color: #dc3545;
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f2bd";
+    background-color: var(--yellow-color);
     color: black;
     display: inline-block;
-    padding: .25em .4em;
-    border-radius: .25rem;
-    margin-left: 1rem;
-    font-size: 1rem;
+    margin-right: 1rem;
+    border-radius: 8px;
+    padding: .5rem;
 }
+
 
 
 .fail{
@@ -161,7 +228,7 @@
 }
 
 .green {
-    border: 2px solid green;
+    border: 3px solid green !important;
 }
 
 
