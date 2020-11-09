@@ -13,7 +13,7 @@ const spinner = document.querySelector('.lds-spinner');
 
 /* Event Listeners */
 form.addEventListener('submit', addCourse);
-btn.addEventListener('click', validate);
+document.addEventListener('DOMContentLoaded', loadSite);
 
 
 /* Functions */
@@ -40,11 +40,23 @@ function addCourse(e){
         }, 3000)
        
     }   
-    else {
+    else {  
+        /* Local storage */
+        const data = loadDataFromLocalStorage();
+
+        const cardsObject = {
+            name: inputName.value,
+            course: inputCourse.value,
+            author: inputAuthor.value
+        }
+
+        data.push(cardsObject);
+
+        localStorage.setItem('cards', JSON.stringify(data));
         
+
         success.style.display = 'flex';
         spinner.style.display ='inline-block';
-
 
         setTimeout(function(){
             success.style.display = 'none';
@@ -78,4 +90,43 @@ function addCourse(e){
     }
 }
 
+function loadDataFromLocalStorage(){
 
+    let data;
+
+    if (localStorage.getItem('cards')){
+        
+        data = JSON.parse(localStorage.getItem('cards'));
+    } else {
+        data = [];
+    }
+
+    return data;
+}
+
+function loadSite(){
+    const cards = loadDataFromLocalStorage();
+
+    let htmlCode = '';
+
+    for(let i = 0; i < cards.length; i++){
+
+        htmlCode += `
+            <li class="card">
+                <div class="front">
+                <img src="https://source.unsplash.com/260x335/?${cards[i].name}
+                " alt="Random picture">
+                </div>
+                <div class="back">
+                    <div class="content">
+                        <p class="name">${cards[i].name}</p>
+                        <p class="course">${cards[i].course}</p>
+                        <p class="author">${cards[i].author}</p>
+                    </div>
+                </div>
+            </li>
+        `;
+    }
+
+    cardList.innerHTML = htmlCode;
+}
