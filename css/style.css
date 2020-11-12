@@ -94,7 +94,7 @@
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    backface-visibility: hidden;;
+    backface-visibility: hidden;
     transition: transform .6s linear;
 }
 
@@ -119,10 +119,6 @@
     align-items: center;
 }
 
-.content p {
-    
-}
-
 .card:hover .front{
     transform: rotateY(180deg);
 }
@@ -130,33 +126,6 @@
 .card:hover .back{
     transform: rotateY(0deg);
 }
-
-
-
-/* .cards{
-    max-width: 70%;
-    min-height: 30rem;
-}
-
-.card-container{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-} */
-
-
-/* .card{
-    min-width: 260px;
-    max-height: 335px;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    border: 1px solid black;
-    border-radius: 8px;
-} */
-
-/* .card-top{
-    border-radius: 8px;
-} */
 
 .name, .course, .author{
     margin-bottom: 1rem;
@@ -199,8 +168,8 @@
 
 
 .fail{
-    border-color: red;
-    border: 3px solid red !important;
+    border-color: rgb(255, 0, 0);
+    border: 3px solid rgba(195, 11, 11, 0.637) !important;
 }
 
 .Error{
@@ -209,7 +178,7 @@
     justify-content: center;
     align-items: center;
     height: 2.2rem;
-    background-color: red;
+    background-color: rgba(156, 26, 26, 0.486);
     border: 1px solid black;
     border-radius: 8px;
     margin-bottom: 2rem;
@@ -230,6 +199,16 @@
 .green {
     border: 3px solid green !important;
 }
+
+.current_dateandtime{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    z-index: ;
+}
+
 
 
 /* Loader */
@@ -254,6 +233,7 @@
     height: 18px;
     border-radius: 20%;
     background: #28a745;
+    border: 2px solid black;
   }
   .lds-spinner div:nth-child(1) {
     transform: rotate(0deg);
@@ -322,7 +302,11 @@
 
 @media (min-width: 1278px){
     .inputs{
-        min-width: 40%;
+        min-width: 50%;
+    }
+
+    .cards{
+        min-width: 50%;
     }
 }
 

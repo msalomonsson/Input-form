@@ -6,10 +6,29 @@
     <script src="https://kit.fontawesome.com/1f43d78f4d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/menu.css">
     <title>Form-Project</title>
 </head>
 <body>
     
+
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger">
+            <div></div>
+        </div>
+        <div class="menu">
+            <div>
+                <div>
+                    <ul>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#" id="clearBtn">Reset course</a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="main-container">
         <form class="inputs">
@@ -39,28 +58,27 @@
 
         <div class="cards">
             <ul class="card-container">
-                <!-- <li class="card">
+                <li class="card">
                     <div class="front">
-                        <picture>
-                            <img src="https://source.unsplash.com/260x335/?nature,water
-                            " alt="Random picture">
-                        </picture>
+                    <img src="https://source.unsplash.com/260x335/?${inputCourse.value}
+                    " alt="Random picture">
                     </div>
                     <div class="back">
                         <div class="content">
-                            <p class="name">Martin Salomonsson</p>
-                            <p class="course">Javascript</p>
-                            <p class="author">Martin</p>
+                            <p id="current_dateandtime">test</p>
+                            <p class="name">${inputName.value}</p>
+                            <p class="course">${inputCourse.value}</p>
+                            <p class="author">${inputAuthor.value}</p>
                         </div>
                     </div>
-                </li> -->
+                </li>
             </ul>
         </div>
     </div>
 
 
 
-
+    
 
 
 

@@ -9,13 +9,21 @@ const success = document.querySelector('.Success')
 const btn = document.querySelector('.submit-btn');
 const icons = document.querySelectorAll('.icon');
 const spinner = document.querySelector('.lds-spinner');
+const closeBtn = document.querySelector('.fa-times-circle');
+const clearLocalStorage = document.querySelector('#clearBtn');
+const timeCurrent = document.querySelector('#current_dateandtime');
+
 
 
 /* Event Listeners */
 form.addEventListener('submit', addCourse);
 document.addEventListener('DOMContentLoaded', loadSite);
+clearLocalStorage.addEventListener('click', clear);
 
 
+
+
+console.log(document);
 /* Functions */
 
 function addCourse(e){
@@ -85,7 +93,7 @@ function addCourse(e){
             inputAuthor.value = '';
 
         }, 3000)
-        
+                
         inputName.focus();
     }
 }
@@ -114,7 +122,7 @@ function loadSite(){
         htmlCode += `
             <li class="card">
                 <div class="front">
-                <img src="https://source.unsplash.com/260x335/?${cards[i].name}
+                <img src="https://source.unsplash.com/260x335/?${cards[i].course}
                 " alt="Random picture">
                 </div>
                 <div class="back">
@@ -129,4 +137,11 @@ function loadSite(){
     }
 
     cardList.innerHTML = htmlCode;
+}
+
+function clear(e){
+    
+    localStorage.clear();
+    location.reload();
+
 }
