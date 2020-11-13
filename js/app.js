@@ -11,8 +11,6 @@ const icons = document.querySelectorAll('.icon');
 const spinner = document.querySelector('.lds-spinner');
 const closeBtn = document.querySelector('.fa-times-circle');
 const clearLocalStorage = document.querySelector('#clearBtn');
-const timeCurrent = document.querySelector('#current_dateandtime');
-
 
 
 /* Event Listeners */
@@ -20,10 +18,6 @@ form.addEventListener('submit', addCourse);
 document.addEventListener('DOMContentLoaded', loadSite);
 clearLocalStorage.addEventListener('click', clear);
 
-
-
-
-console.log(document);
 /* Functions */
 
 function addCourse(e){
